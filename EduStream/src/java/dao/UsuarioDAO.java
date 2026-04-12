@@ -17,12 +17,12 @@ public Usuario validar(String email, String pass) {
         ps.setString(2, pass);
         ResultSet rs = ps.executeQuery();
         
-        if (rs.next()) {
-            user = new Usuario();
-             
-            user.setId(rs.getInt("id_usuario")); 
-            user.setEmail(rs.getString("email"));
-        }
+if (rs.next()) {
+    user = new Usuario();
+    user.setId(rs.getInt("id_usuario")); 
+    user.setNombre(rs.getString("nombre")); 
+    user.setEmail(rs.getString("email"));
+}
     } catch (Exception e) {
         System.out.println("Error: " + e.getMessage());
     }

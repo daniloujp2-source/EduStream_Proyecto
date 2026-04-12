@@ -14,7 +14,8 @@ private static final String USER = "root";
             Class.forName("com.mysql.cj.jdbc.Driver");
             return DriverManager.getConnection(URL, USER, PASS);
         } catch (ClassNotFoundException | SQLException e) {
-    e.printStackTrace(); 
+ 
+            e.printStackTrace(); 
     throw new SQLException(e);
 }
     }
